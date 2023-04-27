@@ -201,24 +201,24 @@ if [ "$MACOS" -gt 0 ]; then
 fi
 
 # Check for and enable full-disk encryption
-logn "Checking full-disk encryption status:"
-VAULT_MSG="FileVault is (On|Off, but will be enabled after the next restart)."
-# shellcheck disable=SC2086
-if fdesetup status | grep $Q -E "$VAULT_MSG"; then
-  logk
-elif [ "$MACOS" -eq 0 ] || [ "$STRAP_CI" -gt 0 ]; then
-  echo
-  logn "Skipping full-disk encryption."
-elif [ "$STRAP_INTERACTIVE" -gt 0 ]; then
-  echo
-  log "Enabling full-disk encryption on next reboot:"
-  sudo_askpass fdesetup enable -user "$USER" |
-    tee ~/Desktop/"FileVault Recovery Key.txt"
-  logk
-else
-  echo
-  abort "Run 'sudo fdesetup enable -user \"$USER\"' for full-disk encryption."
-fi
+##logn "Checking full-disk encryption status:"
+###VAULT_MSG="FileVault is (On|Off, but will be enabled after the next restart)."
+#### shellcheck disable=SC2086
+#if fdesetup status | grep $Q -E "$VAULT_MSG"; then
+ # logk
+#elif [ "$MACOS" -eq 0 ] || [ "$STRAP_CI" -gt 0 ]; then
+  #echo
+  #logn "Skipping full-disk encryption."
+#elif [ "$STRAP_INTERACTIVE" -gt 0 ]; then
+  #echo
+ # log "Enabling full-disk encryption on next reboot:"
+  #sudo_askpass fdesetup enable -user "$USER" |
+   # tee ~/Desktop/"FileVault Recovery Key.txt"
+  #3logk
+#else
+  #echo
+  #abort "Run 'sudo fdesetup enable -user \"$USER\"' for full-disk encryption."
+#fi
 
 # Set up Xcode Command Line Tools
 install_xcode_clt() {
