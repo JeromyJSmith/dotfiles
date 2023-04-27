@@ -36,8 +36,8 @@ STDIN_FILE_DESCRIPTOR=0
 STRAP_GIT_NAME=${STRAP_GIT_NAME:?Variable not set}
 STRAP_GIT_EMAIL=${STRAP_GIT_EMAIL:?Variable not set}
 STRAP_GITHUB_USER=${STRAP_GITHUB_USER:="JeromyJSmith"}
-DEFAULT_DOTFILES_URL="https://github.com/JeromyJSmith/dotfiles.git"
-STRAP_DOTFILES_URL=${STRAP_DOTFILES_URL:="JeromyJSmith/br3dotfiles.git"}
+DEFAULT_DOTFILES_URL="https://github.com/JeromyJSmith/dotfiles"
+STRAP_DOTFILES_URL=${"https://github.com/JeromyJSmith/dotfiles"}
 STRAP_DOTFILES_BRANCH=${STRAP_DOTFILES_BRANCH:="main"}
 STRAP_SUCCESS=""
 
